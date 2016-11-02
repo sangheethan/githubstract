@@ -1,6 +1,6 @@
-let toggleDropDown = function(element) {	
+let toggleDropDown = function(event) {	
 	let dropDown = $('.dropdown-menu');
-	if(element.target.value.length > 0 || element.keyCode == 13) {
+	if(event.type == 'click' && event.target.value.length > 0 || event.keyCode == 13) {
 		if(!dropDown.is(":visible")) {	
 			dropDown.fadeIn("slow");		
 		}
