@@ -1,0 +1,15 @@
+<form>
+	<div class="btn-group">
+		<div class="search-input">
+			<span class="glyphicon glyphicon-search"></span>
+			<input aria-haspopup="true" aria-expanded="false" type="text" #term (keyup.enter)="search(term.value)" onfocus="toggleDropDown(event)" onkeyup="toggleDropDown(event)" onclick="toggleDropDown(event)" placeholder="Search repository" class="searchRepository"/>
+		</div>
+		<div id="search-menu" class="dropdown-menu" *ngIf="sizeOf(items)">
+			<ul>
+				<li *ngFor="let item of items | async" (click)="selectRepo(item)">
+					<span class="gravatar"><img src="{{item.owner.avatar_url}}" /></span>{{item.full_name}}
+				</li>				
+			</ul>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,35 @@
+<div class="search-input">
+	<span class="glyphicon glyphicon-search"></span>  
+	<input #term (keyup)="search(term.value)" placeholder="Search repo..." />
+</div>
+
+<ul>
+	<li *ngFor="let item of items | async" (click)="selectRepository(item)">
+		{{item.full_name}}
+	</li>
+</ul>
+
+<div *ngIf="selectedRepository">
+	<p>Fullname : {{selectedRepository.full_name}}</p>
+	<p>URL: {{selectedRepository.url}}</p>
+	<p>Description: {{selectedRepository.description}}</p>
+	<p>Size: {{selectedRepository.size}}</p>
+	<p>Stargazers: {{selectedRepository.stargazers_count}}</p>
+	<p>Open Issues: {{selectedRepository.open_issues_count}}</p>
+</div>
+
+<ul>
+	<li>Issues</li>
+	<li *ngFor="let issue of issues | async">
+		{{issue.title}}
+	</li>
+</ul>
+
+<div *ngIf="selectedRepository">
+	<h2>Charts</h2>
+	<p>Number of forks: {{selectedRepository.forks_count}}</p>
+	<p>Open Issues: {{selectedRepository.open_issues}}</p>
+	<p>Stargazer Count: {{selectedRepository.stargazers_count}}</p>
+	<p>Watchers Count: {{selectedRepository.watchers}}</p>
+	<p>Subscribers Count: {{selectedRepository.subscribers_count}}</p>
+</div>

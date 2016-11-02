@@ -1,0 +1,83 @@
+@import '_vars';
+@import '_header';
+@import '_sidebar';
+@import '_github_repository';
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background-color: $body-bg;
+}
+repository, charts {
+	display: block;
+}
+.container {
+	width: 100%;
+	padding: 0;
+	.right-col {
+		margin-left: 230px;
+	}
+	#main-content {
+		.intro {
+			padding: 0 20px;
+			font-family: $font-family;
+			font-size: 24px;
+			font-weight: 300;
+			h2 {
+				font-size: 52px;
+				margin-bottom: 20px;
+			}
+			p {
+				font-size: 16px;
+			}
+		}
+	}
+}
+.glyphicon {
+	padding-right: 5px;
+}
+.dropdown-menu {
+	background-color: $dropdown-bg;
+	max-height: 440px;
+	margin-top: 15px;
+	&:before {
+		width: 0;
+		height: 0;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-bottom: 10px solid black;
+		content: '';
+		position: absolute;
+		top: -10px;
+		left: 45%;
+	}
+	ul {
+		max-height: 430px;
+		overflow-y: scroll;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			padding: 10px;
+			color: white;
+			border-bottom: 1px solid #333;
+			cursor: pointer;
+			&:hover {
+				background-color: #111;
+				.gravatar {
+					transform: scale(1.2);
+					margin-right: 15px;
+					transition: all 0.2s ease-in-out;
+				}
+			}
+			.gravatar {
+				width: 30px;
+				height: 30px;
+				margin-right: 10px;
+			}
+		}
+	}
+}

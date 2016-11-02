@@ -1,0 +1,21 @@
+<div class="right-col">	
+	<header class="main-head">
+		<h1>Dashboard</h1>
+		<search-repos (selectRepository)="selectRepository($event)"></search-repos>	
+	</header>
+	<section id="main-content">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="intro" *ngIf="!selectedRepository">
+					<h2>Welcome to Githubstract</h2>
+					<p>To search for a repository, please enter the repository name and hit "Enter". Choose from the list of repositories to view details.</p>
+					<p>Happy Githubstracting!</p>
+					<i>- Sangheethan Subramaniam</i>
+				</div>
+				<repository [repository]="selectedRepository" [issues]="selectedRepositoryIssues">					
+				</repository>
+				<charts [doughnutChartData]="doughnutChartData"></charts>
+			</div>
+		</div>
+	</section>
+</div>

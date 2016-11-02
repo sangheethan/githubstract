@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <base href="" />
+    <title>GitHubstract - A Business Intelligence Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="node_modules/chart.js/dist/Chart.js"></script>
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+  </head>
+  <body>
+    <div class="container">    
+      <aside class="col-md-3 left_col">
+        <a class="site-logo" href="">
+          <picture>
+            <source srcset="assets/images/svg/mark-github.svg" type="svg">
+            <img src="assets/images/svg/mark-github.svg" alt="logo">
+          </picture>
+          <span>GitHubstract</span>
+        </a>
+        <nav>
+          <ul>
+            <li>Main</li>
+            <li>Dashboard</li>
+            <li><span class="glyphicon glyphicon-transfer"></span>Repository</li>
+            <li><span class="glyphicon glyphicon-exclamation-sign"></span>Issues</li>
+            <li><span class="glyphicon glyphicon-stats"></span>Visualization</li>
+          </ul>
+        </nav>
+      </aside>
+      <githubstract></githubstract>
+    </div>  
+    <script src="app/javascript/lib/jquery-3.1.1.min.js"></script>
+    <script src="app/javascript/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="app/javascript/custom/main.js"></script>
+  </body>
+</html>

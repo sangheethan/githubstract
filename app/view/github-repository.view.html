@@ -1,0 +1,40 @@
+<div *ngIf="repository" id="repository-detail">
+	<div class="stat-data">
+		<div>
+			<span class="top">Stargazers</span>
+			<span class="item">{{repository.stargazers_count}}</span>
+		</div>
+		<div>
+			<span class="top">Watchers</span>
+			<span class="item">{{repository.watchers_count}}</span>
+		</div>
+		<div>
+			<span class="top">Open Issues</span>
+			<span class="item">{{repository.open_issues_count}}</span>
+		</div>
+		<div>
+			<span class="top">Forks</span>
+			<span class="item">{{repository.forks_count}}</span>
+		</div>
+	</div>	
+	<div class="repo-detail">
+		<h3>
+			<span class="gravatar"><img src="{{repository.owner.avatar_url}}" /></span>
+			<a href="{{repository.html_url}}" target="_blank">{{repository.full_name}}</a>
+			<span class="repo-size">(size: {{repository.size | bytes: 3 }})</span>
+			<span class="language">{{repository.language}}</span>
+		</h3>
+		<p>{{repository.description}}</p>
+	</div>
+</div>
+<div *ngIf="issues" id="issues-bucket" class="col-md-8 col-sm-8 col-xs-8">
+	<h3 class="issue-title">#Issues</h3>	
+	<ul>
+		<li *ngFor="let issue of issues | async">			
+			<a href="{{issue.html_url}}" target="_blank">
+				<span class="glyphicon glyphicon-exclamation-sign"></span>{{issue.title}}  
+				<span class="gravatar"><img src="{{issue.user.avatar_url}}" /></span>@{{issue.user.login}}
+				<span class="issue-state {{issue.state}}">{{issue.state}}</span></a>
+		</li>
+	</ul>
+</div>
